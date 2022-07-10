@@ -1,0 +1,270 @@
+# ChatManager by Saymoan
+
+# Permission nodes:
+# chatmanager.admin - Gives access to /chatmanager reload
+# chatmanager.chat.[color] - Gives access to the specified ChatColor. Players will have "WHITE" by default
+# chatmanager.name.[color] - Gives access to the specified NameColor. Players will have "DEFAULT" by default
+# chatmanager.title.[title] - Gives access to the specified Title. Players will have "DEFAULT" by default
+
+##########
+# README #
+##########
+# Once a voucher is created and given to a player in-game, the config data for the "voucher-item" cannot be changed
+# If it is changed, it will cause all previously given vouchers to stop working
+# Ensure your voucher item information is accurate before giving them out in-game
+
+# Plugin settings
+plugin:
+  # %1$s - Spigot placeholder for the player name
+  # %2$s - Spigot placeholder for the message
+  chat-format: '%1$s &8»&r %2$s'
+  # Time in-between automatic saves in seconds
+  # All that is being saved in the player's active chat/name colors and their titles
+  # A failed save will not cause any catastrophic damage
+  # Default: 300
+  save-interval: 300
+
+###############
+# CHAT COLORS #
+###############
+chat-colors:
+  menu-item:
+    material: 'PAPER'
+    name: '%status%&r %color%&r &7Chat Color'
+    lore:
+      - '&f&l(!) &r&fClick to set as your active &nChat Color&r&f!'
+    glowing: false
+  voucher-item:
+    material: 'PAPER'
+    name: '&7x1 &f&lChat Color: &r%color%'
+    lore:
+      - '&7Gain access to the %color% &r&7Chat Color and'
+      - '&7use this color in chat!'
+      - ''
+      - '&fColor Information:'
+      - ' &f&l*&r &7Chat Color: &r%color%'
+      - ' &f&l*&r &7Color Type: &r&f&nPermanent'
+      - ''
+      - '&c&lWarning: &r&7This item can only be used &nONCE'
+      - '&7and is not able to be refunded if lost!'
+      - ''
+      - '&f&l(!) &r&fClick to redeem this &nChat Color &r&fvoucher!'
+    glowing: true
+
+###############
+# NAME COLORS #
+###############
+name-colors:
+  # DO NOT REMOVE THE DEFAULT NAME COLOR
+  # DOING SO WILL RESULT IN UNEXPECTED PLUGIN FUNCTIONALITY
+  default:
+    menu-item:
+      material: 'PAPER'
+      name: '%status%&r &fWhite&r &7Name Color'
+      lore:
+        - '&f&l(!) &r&fClick to set as your active &nName Color&r&f!'
+      glowing: false
+    voucher-item:
+      material: 'PAPER'
+      name: '&7x1 &f&lName Color: &r&fWhite'
+      lore:
+        - '&7Gain access to the &fWhite&r &7Name Color and'
+        - '&7use this color in chat!'
+        - ''
+        - '&fColor Information:'
+        - ' &f&l*&r &7Name Color: &r&fWhite'
+        - ' &f&l*&r &7Color Type: &r&f&nPermanent'
+        - ''
+        - '&c&lWarning: &r&7This item can only be used &nONCE'
+        - '&7and is not able to be refunded if lost!'
+        - ''
+        - '&f&l(!) &r&fClick to redeem this &nName Color &r&fvoucher!'
+      glowing: true
+  ender:
+    colors:
+      - '&d'
+      - '&5'
+    menu-item:
+      material: 'PAPER'
+      name: '%status%&r &dE&5n&dd&5e&dr&r &7Name Color'
+      lore:
+        - '&f&l(!) &r&fClick to set as your active &nName Color&r&f!'
+      glowing: false
+    voucher-item:
+      material: 'PAPER'
+      name: '&7x1 &f&lName Color: &r&dE&5n&dd&5e&dr'
+      lore:
+        - '&7Gain access to the &dE&5n&dd&5e&dr&r &7Name Color and'
+        - '&7use this color in chat!'
+        - ''
+        - '&fColor Information:'
+        - ' &f&l*&r &7Name Color: &r&dE&5n&dd&5e&'
+        - ' &f&l*&r &7Color Type: &r&f&nPermanent'
+        - ''
+        - '&c&lWarning: &r&7This item can only be used &nONCE'
+        - '&7and is not able to be refunded if lost!'
+        - ''
+        - '&f&l(!) &r&fClick to redeem this &nName Color &r&fvoucher!'
+      glowing: true
+  sky:
+    colors:
+      - '&9'
+      - '&b'
+    menu-item:
+      material: 'PAPER'
+      name: '%status%&r &9S&bk&9y&r &7Name Color'
+      lore:
+        - '&f&l(!) &r&fClick to set as your active &nName Color&r&f!'
+      glowing: false
+    voucher-item:
+      material: 'PAPER'
+      name: '&7x1 &f&lName Color: &r&9S&bk&9y'
+      lore:
+        - '&7Gain access to the &9S&bk&9y&r &7Name Color and'
+        - '&7use this color in chat!'
+        - ''
+        - '&fColor Information:'
+        - ' &f&l*&r &7Name Color: &r&9S&bk&9y'
+        - ' &f&l*&r &7Color Type: &r&f&nPermanent'
+        - ''
+        - '&c&lWarning: &r&7This item can only be used &nONCE'
+        - '&7and is not able to be refunded if lost!'
+        - ''
+        - '&f&l(!) &r&fClick to redeem this &nName Color &r&fvoucher!'
+      glowing: true
+
+
+##########
+# TITLES #
+##########
+titles:
+  # DO NOT REMOVE THE DEFAULT TITLE
+  # DOING SO WILL RESULT IN UNEXPECTED PLUGIN FUNCTIONALITY
+  default:
+    menu-item:
+      material: 'PAPER'
+      name: '%status%&r &fNone &7Title'
+      lore:
+        - '&f&l(!) &r&fClick to set as your active &nTitle&r&f!'
+      glowing: false
+    voucher-item:
+      material: 'PAPER'
+      name: '&7x1 &f&lTitle: &fNone'
+      lore:
+        - '&7Gain access to the &fNone&r &7Title and'
+        - '&7use this title in chat!'
+        - ''
+        - '&fTitle Information:'
+        - ' &f&l*&r &7Title: &r&fNone'
+        - ' &f&l*&r &7Title Type: &r&f&nPermanent'
+        - ''
+        - '&c&lWarning: &r&7This item can only be used &nONCE'
+        - '&7and is not able to be refunded if lost!'
+        - ''
+        - '&f&l(!) &r&fClick to redeem this &nTitle &r&fvoucher!'
+      glowing: true
+  split:
+    title: '&4&lSplit'
+    menu-item:
+      material: 'PAPER'
+      name: '%status%&r &4&lSplit&r &7Title'
+      lore:
+        - '&f&l(!) &r&fClick to set as your active &nTitle&r&f!'
+      glowing: false
+    voucher-item:
+      material: 'PAPER'
+      name: '&7x1 &f&lTitle: &r&4&lSplit'
+      lore:
+        - '&7Gain access to the &4&lSplit&r &7Title and'
+        - '&7use this title in chat!'
+        - ''
+        - '&fTitle Information:'
+        - ' &f&l*&r &7Title: &r&4&lSplit'
+        - ' &f&l*&r &7Title Type: &r&f&nPermanent'
+        - ''
+        - '&c&lWarning: &r&7This item can only be used &nONCE'
+        - '&7and is not able to be refunded if lost!'
+        - ''
+        - '&f&l(!) &r&fClick to redeem this &nTitle &r&fvoucher!'
+      glowing: true
+  nuked:
+    title: '&c&l#Nuked'
+    menu-item:
+      material: 'PAPER'
+      name: '%status%&r &c&l#Nuked&r &7Title'
+      lore:
+        - '&f&l(!) &r&fClick to set as your active &nTitle&r&f!'
+      glowing: false
+    voucher-item:
+      material: 'PAPER'
+      name: '&7x1 &f&lTitle: &r&c&l#Nuked'
+      lore:
+        - '&7Gain access to the &c&l#Nuked&r &7Title and'
+        - '&7use this title in chat!'
+        - ''
+        - '&fTitle Information:'
+        - ' &f&l*&r &7Title: &r&c&l#Nuked'
+        - ' &f&l*&r &7Title Type: &r&f&nPermanent'
+        - ''
+        - '&c&lWarning: &r&7This item can only be used &nONCE'
+        - '&7and is not able to be refunded if lost!'
+        - ''
+        - '&f&l(!) &r&fClick to redeem this &nTitle &r&fvoucher!'
+      glowing: true
+
+#########
+# MENUS #
+#########
+menus:
+  status:
+    active: '&a&lACTIVE&r'
+    unlocked: '&6&lUNLOCKED&r'
+    locked: '&c&lLOCKED&r'
+  color-selection:
+    chat-color:
+      material: 'BOOK_AND_QUILL'
+      name: '&eChat Color'
+      lore:
+        - '&aClick to open!'
+      glowing: false
+    name-color:
+      material: 'NAME_TAG'
+      name: '&bName Color'
+      lore:
+        - '&aClick to open!'
+      glowing: false
+
+############
+# MESSAGES #
+############
+messages:
+  prefix: '&8[&6ChatManager&8]'
+  commands:
+    reload: '%prefix% &aSuccessfully reloaded the config.yml!'
+    give-chat-color: '%prefix% &a'
+    give-name-color: '%prefix% &a'
+    give-title: '%prefix% &a'
+  errors:
+    invalid-menu-item: '%prefix% &cError loading menu %args0%! Contact a server administrator.'
+    insufficient-permissions: '%prefix% &cInsufficient permissions!'
+    invalid-usage: '%prefix% &cInvalid usage: &e%args0%'
+    invalid-player: '%prefix% &cThe specified player is either invalid or offline!'
+    invalid-argument: '%prefix% &cThe specified %args0% is invalid!'
+    unknown-command: '%prefix% &cUnknown command!'
+  vouchers:
+    given: '%prefix% &aSuccessfully gave &e%args0% %args1% %args2% &avoucher(s)!'
+    received: '%prefix% &aYou have received &e%args0% %args1% &avoucher(s)!'
+    redeemed: '%prefix% &aYou have redeemed a voucher!'
+    already-unlocked: '%prefix% &cYou have already unlocked this &e%args0%&c!'
+  chat-color:
+    already-active: '%prefix% &6You already have that chat color selected!'
+    changed: '%prefix% &aSuccessfully changed your chat color!'
+    locked: '%prefix% &cThat chat color is locked!'
+  name-color:
+    already-active: '%prefix% &6You already have that name color selected!'
+    changed: '%prefix% &aSuccessfully changed your name color!'
+    locked: '%prefix% &cThat name color is locked!'
+  title:
+    already-active: '%prefix% &6You already have that title selected!'
+    changed: '%prefix% &aSuccessfully changed your title!'
+    locked: '%prefix% &cThat title is locked!'

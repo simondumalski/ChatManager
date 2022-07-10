@@ -1,0 +1,26 @@
+name: ChatManager
+version: '${project.version}'
+description: '${project.description}'
+authors: [ Saymoan ]
+api-version: 1.8
+main: me.simondumalski.chatmanager.Main
+prefix: ChatManager
+depend: [ Vault ]
+commands:
+  chatmanager:
+    description: Allows admins to give vouchers to players
+  colors:
+    description: Allows players to change the chat and name colors
+  titles:
+    description: Allows players to change their titles
+permissions:
+  chatmanager.admin:
+    description: Gives access to all admin commands
+    default: op
+    children:
+      chatmanager.admin.list: true
+      chatmanager.admin.give: true
+  chatmanager.admin.list:
+    description: Lists the available chat/name colors or titles
+  chatmanager.admin.give:
+    description: Allows you to give a voucher for a chat/name color or title
